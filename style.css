@@ -1,0 +1,190 @@
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    .todo-container {
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .todo-container:hover {
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    /* --- Heading --- */
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      color: #333;
+    }
+
+    .tick-emoji {
+      font-size: 38px;
+      color: #4CAF50;
+      animation: bounce 1.2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    /* --- Input Section --- */
+    .input-section {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .input-section input,
+    .input-section button,
+    .filter-section select {
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.2s ease;
+    }
+
+    .input-section input:focus,
+    .filter-section select:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+
+    .input-section button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      border: none;
+      font-weight: 600;
+    }
+
+    .input-section button:hover {
+      background: #45a049;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* --- Filter Section --- */
+    .filter-section {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+    }
+
+    /* --- Task List --- */
+    #taskList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .task {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 18px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      background: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+    }
+
+    .task:hover {
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      transform: translateY(-1px);
+    }
+
+    .task.completed {
+      background: #e6f4ea;
+    }
+
+    .task.completed .task-title {
+      text-decoration: line-through;
+      color: #777;
+    }
+
+    .task-info {
+      flex-grow: 1;
+    }
+
+    .task-title {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .task-time {
+      font-size: 13px;
+      color: #999;
+      margin-top: 2px;
+    }
+
+    /* --- Action Buttons --- */
+    .actions button {
+      margin-left: 6px;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .actions button.complete {
+      background: #4CAF50;
+      color: white;
+    }
+
+    .actions button.complete:hover {
+      background: #45a049;
+    }
+
+    .actions button.edit {
+      background: #FFA500;
+      color: white;
+    }
+
+    .actions button.edit:hover {
+      background: #e69500;
+    }
+
+    .actions button.delete {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .actions button.delete:hover {
+      background: #c0392b;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 600px) {
+      .input-section {
+        flex-direction: column;
+      }
+    }
